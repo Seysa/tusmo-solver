@@ -77,7 +77,7 @@ const inputSize = +promptUntil("Taille du mot: ", (input) => {
 
 const startWith = prompt("Le mot commence par: ");
 
-let endWith = prompt("Le mot finis par: ");
+let endWith = prompt("Le mot finit par: ");
 let has = (() => {
     const input = prompt("Le mot contient les lettres suivantes (séparer par des espaces): ");
     if (!input) {
