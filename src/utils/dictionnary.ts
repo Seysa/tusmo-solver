@@ -1,6 +1,4 @@
-import fs from "fs";
-
-const file: string[] = fs.readFileSync("dictionnaire.txt", "utf-8").split("\n");
+import dic from "../../data.json";
 
 function wordHas(word: string, ...str: string[]) {
   function removeIndexFromWord(index: number) {
@@ -59,4 +57,16 @@ function wordHasNot(word: string, ...str: string[]) {
     }
   }
   return true;
+}
+
+export function guessWord(
+  size: number,
+  startWith: string,
+  endWith: string,
+  has: string[],
+  hasNot: string[]
+) {
+  return dic.filter(
+    find(size, { start: startWith, end: endWith, has, hasNot })
+  );
 }
